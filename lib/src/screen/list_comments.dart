@@ -37,6 +37,7 @@ class ListCommentsState extends State<ListComments> {
         body: ListView.builder(
           itemBuilder: _buildTile,
           itemCount: _comments.length,
+          padding: EdgeInsets.all(8.0),
         ),
       ),
     );

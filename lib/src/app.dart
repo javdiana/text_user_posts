@@ -8,24 +8,14 @@ class App extends StatelessWidget{
     return MaterialApp(
       title: 'Posts',
       theme: ThemeData.dark(),
-      onGenerateRoute: routes,
+      home: ListPost(),
     );
   }
 
   Route routes(RouteSettings settings) {
     if(settings.name == '/') {
       return MaterialPageRoute(
-        builder: (context) {
-          return ListPost();
-        },
-      );
-    }
-    else {
-      return MaterialPageRoute(
-        builder: (context) {
-          final postId = int.parse(settings.name.replaceFirst('/', ''));
-          return ListComments(postId);
-        }
+        builder: (context) => ListPost(),
       );
     }
   }

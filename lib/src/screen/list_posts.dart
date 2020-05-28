@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertestposts/src/model/post.dart';
 import 'package:fluttertestposts/src/resources/post_api.dart';
+import 'package:fluttertestposts/src/screen/list_comments.dart';
 
 class ListPost extends StatefulWidget {
   State<StatefulWidget> createState() => ListPostState();
@@ -40,7 +41,8 @@ class ListPostState extends State<ListPost> {
       children: [
         ListTile(
           onTap: () {
-            Navigator.pushNamed(context, '/${_posts[index].id}');
+            Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ListComments(_posts[index].id)));
           },
           title: Text(
               _posts[index].title,
